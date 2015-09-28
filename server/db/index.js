@@ -3,8 +3,8 @@ var mysql = require('mysql');
 
 // watsi db connect1ion
 var connection = mysql.createConnection({
-  user     : 'taylor',
-  password : 'winget',
+  user     : 'root',
+  password : '',
   database : 'watsi'
 });
 
