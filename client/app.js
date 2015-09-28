@@ -1,6 +1,6 @@
 var app = angular.module('eir', [
   'eir.home', 
-  // 'eir.about', 
+  'eir.about', 
   'eir.patients', 
   // 'eir.getFunded', 
   // 'eir.patientsID', 
@@ -16,10 +16,10 @@ app.config(function($routeProvider) {
     templateUrl: '/home/home.html',
     controller: 'homeCtrl'
   })
-  // .when('/about', {
-  //   templateUrl: '/about/about.html',
-  //   controller: 'aboutCtrl'
-  // })
+  .when('/about', {
+    templateUrl: '/about/about.html',
+    controller: 'aboutCtrl'
+  })
   .when('/patients', {
     templateUrl: '/patients/patients.html',
     controller: 'patientsCtrl'
