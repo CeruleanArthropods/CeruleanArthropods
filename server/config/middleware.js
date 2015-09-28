@@ -10,7 +10,7 @@ module.exports = function (app, express) {
 //Serve up static files in client folder and other middleware
   app.use(morgan('dev'));
   app.use(bodyParser.json());
-  app.use(express.static(__dirname + '/client'));
+  app.use(express.static(__dirname + '/../../client'));
 
 //Routes traffic to their router and injects the router into its route file
   app.use('/classes/patients', patientRouter);
