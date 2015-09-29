@@ -1,6 +1,6 @@
 var app = angular.module('eir.factory', []);
 
-app .factory('patientsFactory', function ($http) {
+app.factory('patientsFactory', function ($http) {
 
   var getPatients = function() {
     return $http.get('/classes/patients')

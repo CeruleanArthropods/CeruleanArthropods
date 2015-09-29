@@ -1,6 +1,6 @@
 angular.module('eir.patients', [])
 
-.controller('patientsCtrl', function($scope, $http, patientsFactory) {
+.controller('patientsCtrl', function($scope, patientsFactory) {
 
   $scope.patients = patientsFactory.patients;
 

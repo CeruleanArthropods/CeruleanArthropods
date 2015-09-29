@@ -1,11 +1,28 @@
-create a controller
+angular.module('eir.donate', ['ngRoute'])
 
-factory is a dependency (inject my facotyr)
+.controller('donateCtrl', function($scope, patientsFactory, $routeParams){
 
-inject routeparams
+  $scope.patient = {};
 
-get the patients with the facoty using routeparams.id
+  patientsFactory.getPatient($routeParams.id)
+    .then(function(res) {
+      $scope.patient.id = res[0].id;
+      $scope.patient.username = res[0].username;
+      $scope.patient.first_name = res[0].first_name;
+      $scope.patient.last_name = res[0].last_name;
+      $scope.patient.bio = res[0].bio;
+      $scope.patient.goal = res[0].goal;
+      $scope.patient.progress = res[0].progress;
+      $scope.patient.funded = res[0].funded;
+      $scope.patient.condition_id = res[0].condition_id;
+      $scope.patient.photo_id = res[0].photo_id;
+    });
+});
 
-save it to $scope.patient using promises (.then)
 
-display it now that its in your scope using {{ patient.name }}
+
+// Handles GET req for single patient (donate.html)
+
+// * basic html form implemented
+// * $scope.patient contains entire patient object
+// * 

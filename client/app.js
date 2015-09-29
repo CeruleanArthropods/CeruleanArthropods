@@ -5,7 +5,7 @@ var app = angular.module('eir', [
   'eir.patients', 
   // 'eir.getFunded', 
   // 'eir.patientsID', 
-  // 'eir.donateID',
+  'eir.donate',
   // 'eir.thankYou', 
   // 'ui.bootstrap', 
   'ngRoute']
