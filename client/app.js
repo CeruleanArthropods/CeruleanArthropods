@@ -33,10 +33,10 @@ app.config(function($routeProvider) {
   //   templateUrl: '/patients/:id.html',
   //   controller: 'patientProfileCtrl'
   // })
-  // .when('/donate/:id', {
-  //   templateUrl: '/donate/:id.html',
-  //   controller: 'donateCtrl'
-  // })
+  .when('/donate/:id', {
+    templateUrl: '/donate/donate.html',
+    controller: 'donateCtrl'
+  })
   // .when('/thank-you', {
   //   templateUrl: '/thank-you.html',
   //   controller: 'thankYouCtrl'

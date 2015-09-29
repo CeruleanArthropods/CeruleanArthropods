@@ -1,21 +1,30 @@
-angular.module('eir.factory', [])
+var app = angular.module('eir.factory', []);
 
-.factory('patientsFactory', function ($http) {
-
-  var patients;
+app .factory('patientsFactory', function ($http) {
 
   var getPatients = function() {
-    $http.get('/classes/patients')
-    .success(function(data) {
-      patients = data;
-    })
-    .error(function(data) {
-      console.log("Error: " + data);
-    })
+    return $http.get('/classes/patients')
+      .then(function(res) {
+        return res.data
+      })
+      .catch(function(err) {
+        console.log('ERROR getPatients: ' + err);
+      });
+  };
+
+  var getPatient = function(id) {
+    return $http.get('/classes/patients/' + id)
+      .then(function(res) {
+        return res.data
+      })
+      .catch(function(err) {
+        console.log('ERROR getPatient: ' + err);
+      });
   };
 
   return {
-    patients: patients
+    getPatients: getPatients,
+    getPatient: getPatient
   }
 
 
