@@ -16,13 +16,8 @@ angular.module('eir.donate', ['ngRoute'])
       $scope.patient.funded = res[0].funded;
       $scope.patient.condition_id = res[0].condition_id;
       $scope.patient.photo_id = res[0].photo_id;
+    })
+    .catch(function(err) {
+      console.log('ERROR donate.js: ' + err);
     });
 });
-
-
-
-// Handles GET req for single patient (donate.html)
-
-// * basic html form implemented
-// * $scope.patient contains entire patient object
-// * 
