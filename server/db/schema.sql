@@ -10,12 +10,12 @@ CREATE TABLE IF NOT EXISTS tbl_patients (
   password VARCHAR(70) NOT NULL,
   signup_data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   condition_id INT(11) NOT NULL,
-  photo_id VARCHAR(11) DEFAULT NULL,
+  photo_url VARCHAR(200) DEFAULT NULL,
   bio TEXT,
   progress INT(20) DEFAULT 0,
   goal INT(20) NOT NULL,
   funded TINYINT(1),
-  INDEX(photo_id)
+  INDEX(photo_url)
 );
 
 CREATE TABLE IF NOT EXISTS tbl_conditions (
@@ -44,3 +44,4 @@ CREATE TABLE IF NOT EXISTS tbl_donations (
   donor_email VARCHAR(70) NOT NULL,
   patient_username VARCHAR(70) NOT NULL
 );
+
