@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS tbl_patients (
   id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   first_name VARCHAR(70) NOT NULL,
   last_name VARCHAR(70) NOT NULL,
-  username VARCHAR(70) NOT NULL UNIQUE,
+  email VARCHAR(70) NOT NULL UNIQUE,
   password VARCHAR(70) NOT NULL,
   signup_data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   condition_id INT(11) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS tbl_patients (
   bio TEXT,
   progress INT(20) DEFAULT 0,
   goal INT(20) NOT NULL,
-  funded TINYINT(1),
+  funded TINYINT(4) NOT NULL DEFAULT 0,
   INDEX(photo_url)
 );
 

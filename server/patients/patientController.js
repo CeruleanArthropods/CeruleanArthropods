@@ -1,5 +1,6 @@
 var db = require('../db/index.js');
 var formidable = require('formidable');
+var conditions = require('../conditions/conditionsController.js');
 
 
 module.exports = {
@@ -39,10 +40,11 @@ module.exports = {
     form.keepExtensions = true;
 
     var insertNewPatient = function(vals) {
-      console.log('inserting new patient');
-      var sqlquery = "INSERT INTO tbl_patients (first_name, last_name, username, \
-        password, condition_id, photo_url, bio, progress, goal, funded) \
-        VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)";
+
+      var sqlquery = "INSERT INTO tbl_patients (first_name, last_name, email, \
+        password, condition_id, photo_url, bio, goal) \
+        VALUES ( ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?)";
+      console.log('values adding', vals);
 
       db.query(sqlquery, vals, function(err, data){
         if(!err) {
@@ -55,13 +57,20 @@ module.exports = {
     };
 
     form.parse(req, function ( err, fields, files) {
-      var oldFilePath = files['photo_id'].path;
-      var newPatientFields = [fields.first_name, fields.last_name,fields.username,
-        fields.password, fields.condition_id, oldFilePath,
-        fields.bio, fields.progress,fields.goal, 
-        fields.funded
-      ];
-      insertNewPatient(newPatientFields);
+      // console.log(fields);
+      var oldFilePath = files['photo'].path;
+
+      var conditionName = fields.condition_id;
+      console.log(conditionName);
+      conditions.getOrAddNewCondition(conditionName, function(recordId){
+
+        var newPatientFields = [fields.first_name, fields.last_name,fields.email,
+          fields.password, recordId, oldFilePath,
+          fields.bio,fields.goal,
+        ];
+        insertNewPatient(newPatientFields);
+
+      });
     });
 
 
