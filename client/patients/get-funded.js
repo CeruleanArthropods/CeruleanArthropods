@@ -16,7 +16,7 @@ angular.module('eir.getFunded', [])
         
       })
       .catch(function(err) {
-        console.log('ERROR patientsFactory.submitPatientForm: ' + err);
+        console.log(err);
       });
   }
 });

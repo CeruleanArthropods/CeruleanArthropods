@@ -2,7 +2,6 @@ angular.module('eir.patients', [])
 
 .controller('patientsCtrl', function($scope, patientsFactory) {
 
-
   $scope.patients;
 
   patientsFactory.getPatients()
@@ -19,11 +18,4 @@ angular.module('eir.patients', [])
       $scope.patients[i].leftToFund = leftToFund;
     }
   }
-
-  
-
-  
-
-
-
 });

@@ -59,6 +59,7 @@ app.factory('donorsFactory', function ($http) {
         return res.data;
       })
       .catch(function(err) {
+        console.log(newDonation)
         console.log('ERROR donorsFactory.submitDonationForm: ' + err);
       });
   };
