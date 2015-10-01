@@ -2,7 +2,6 @@ var db = require('../db/index.js');
 
 module.exports.createDonation = function (req, res) {
   // Parses the data for SQL query
-  console.log(req.body)
   var donorFirst = req.body.donor_first_name;
   var donorLast = req.body.donor_last_name;
   var email = req.body.donor_email;
