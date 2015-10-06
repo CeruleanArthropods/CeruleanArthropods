@@ -8,7 +8,8 @@ var app = angular.module('eir', [
   'eir.donate',
   'eir.thankYou', 
   'eir.auth',
-  'ngRoute']
+  'ngRoute',
+  'angularPayments' ]
 );
 
 app.config(function ($routeProvider, $httpProvider) {
