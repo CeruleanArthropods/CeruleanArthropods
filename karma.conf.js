@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
@@ -15,11 +15,20 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './client/bower_components/angular/angular.js',
-      './client/bower_components/angular-mocks/angular-mocks.js',
-      './client/app.js',
-      {pattern: './client/**/*.js', included: false},
-      {pattern: './test/unit-tests/*.js', included: false}
+      'client/bower_components/angular/angular.js',
+      'client/bower_components/angular-mocks/angular-mocks.js',
+      'client/bower_components/angular-route/angular-route.js',
+      'client/services/factory.js',
+      'client/about/about.js',
+      'client/auth/auth.js',
+      'client/donate/donate.js',
+      'client/home/home.js',
+      'client/patients/get-funded.js',
+      'client/patients/patients.js',
+      'client/profile/profile.js',
+      'client/thank-you.js',
+      'client/app.js',
+      'test/unit/client/*.js'
     ],
 
 
@@ -62,6 +71,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   })
 }

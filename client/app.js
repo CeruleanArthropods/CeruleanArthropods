@@ -8,7 +8,6 @@ var app = angular.module('eir', [
   'eir.donate',
   'eir.thankYou', 
   'eir.auth',
-  'ui.bootstrap', 
   'ngRoute']
 );
 
