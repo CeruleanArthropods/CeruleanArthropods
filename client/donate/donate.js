@@ -68,6 +68,20 @@ angular.module('eir.donate', ['ngRoute', 'ui.bootstrap'])
       });
   };
 
+  $scope.handleStripe = function(status, response) {
+    if (response.error) {
+      // there was an error. Fix it. 
+    } else {
+      // got stripe token, now charge it or smt 
+      var token = response.id;
+      console.log(token);
+    }
+    //not capturing user info!!!
+    // $scope.handleSubmit($scope.doner);
+  };
+
+
+
   // on form submit, send the new donor info to the server; POST req
   $scope.handleSubmit = function(newDonor) {
     newDonor.patient_id = $routeParams.id;
