@@ -1,0 +1,19 @@
+  <div ng-controller='profileCtrl'>
+    <div class='profile-container'>
+      <img class='profile-background profile-img' ng-src="{{currentUser.photo}}" alt="Description"/>
+      <div class='user-info'>
+        <h1>Welcome, {{currentUser.firstName}}! </h1>
+          <h4> You have been giving since 2015.</h4>  
+          <h5> {{currentUser.location}} | username: {{currentUser.username}}</h5>
+      </div>
+      <a href="#/home" ng-controller="authCtrl" ng-click="signout()">LOGOUT</a>
+    </div>
+  </div>
+
+<!-- donations: [
+  {name: 'AIDS', amount: 100, image: '../photos/no-photo.png'}, 
+  {name: 'Cancer', amount: 100, image: '../photos/no-photo.png'}, 
+  {name: 'Heart transplant', amount: 100, image: '../photos/no-photo.png'}, 
+  {name: 'Malaria', amount: 100, image: '../photos/no-photo.png'}, 
+  {name: 'Famine', amount: 100, image: '../photos/no-photo.png'}
+ -->

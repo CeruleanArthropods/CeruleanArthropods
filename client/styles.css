@@ -1,4 +1,3 @@
-
 /**HOME PAGE**/
 .home-image {
   background-image: url("eir.JPG");
@@ -28,6 +27,31 @@ nav.navbar {
 
 .navbar-bg {
   background-color: white;
+}
+
+/**PROFILE PAGE**/
+.profile-background {
+  background-color: white;
+}
+
+.profile-container {
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+}
+
+.profile-img {
+  border-color: Gainsboro;
+  border-width: 10em;
+  float:left;
+  width: 20em;
+  height: 20em;
+}
+
+.user-info {
+  float:left;
+  padding-left: 50px;
 }
 
 /* PATIENT PAGE */
@@ -308,3 +332,6 @@ input {
   top: 50%;
 }
 
+.footer {
+  clear:both;
+}
