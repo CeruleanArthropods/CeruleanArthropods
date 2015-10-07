@@ -75,6 +75,10 @@ angular.module('eir.donate', ['ngRoute', 'ui.bootstrap'])
       // got stripe token, now charge it or smt 
       var token = response.id;
       console.log(token);
+      donorsFactory.submitStripe(response)
+        .then(function(res){
+          console.log(res);
+        });
     }
     //not capturing user info!!!
     // $scope.handleSubmit($scope.doner);
