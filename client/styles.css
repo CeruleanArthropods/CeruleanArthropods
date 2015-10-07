@@ -334,4 +334,6 @@ input {
 
 .footer {
   clear:both;
+  position:absolute;
+  bottom:0;
 }
