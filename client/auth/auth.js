@@ -27,6 +27,7 @@ angular.module('eir.auth', [])
 
   $scope.signout = function () {
     authFactory.signout();
+    //do something after signout
   }
 
 });
