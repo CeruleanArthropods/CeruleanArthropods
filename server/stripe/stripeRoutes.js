@@ -4,7 +4,8 @@ module.exports = function(router) {
 
   router.route('/')
     .post(function(req, res) {
-      var stripeToken = req.body.stripeToken;
+      var stripeToken = req.body.id;
+      console.log(stripeToken);
 
       var charge = stripe.charges.create({
         amount: 1000, // amount in cents, again
@@ -14,9 +15,7 @@ module.exports = function(router) {
       }, function(err, charge) {
         if (err && err.type === 'StripeCardError') {
           // The card has been declined
-          console.log(err);
         } else {
-          console.log(charge);
           res.send(charge);
         }
       });
