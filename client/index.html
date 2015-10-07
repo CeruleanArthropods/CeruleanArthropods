@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" type="text/css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css">
   <!-- Bower dependencies -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -37,10 +37,9 @@
         <ul class="nav navbar-nav">
           <li><a href="#/patients">PATIENTS</a></li>
           <li><a href="#/get-funded">GET FUNDED</a></li>
-          <li><a href="#/about">ABOUT</a></li>
-          <li><a href="#/signup">SIGNUP</a></li>
-          <li><a href="#/signin">LOGIN</a></li>
-          <li><a href="#/home" ng-controller="authCtrl" ng-click="signout()">LOGOUT</a></li>
+          <li><a href="#/about">DISCOVER EIR</a></li>
+          <li><a href="#/profile">Profile</a></li>
+          <li><a href="#/signup">SIGNUP</a> / <a href="#/signin">LOGIN</a></li>
         </ul>        
       </div>
       
@@ -50,7 +49,7 @@
   
    <div ng-view></div>
 
-  <footer class="container-fluid" role="navigation">
+  <footer class="container-fluid footer" role="navigation">
     <ul class="nav navbar-nav">
           <li><a href="#/patients">PATIENTS</a></li>
           <li><a href="#/get-funded">GET FUNDED</a></li>

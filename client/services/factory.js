@@ -1,6 +1,5 @@
 var app = angular.module('eir.factory', []);
 
-
 app.service('fileUpload', function($http) {
   return {
     uploadFileToUrl:function(fields, uploadUrl) {
@@ -21,6 +20,41 @@ app.service('fileUpload', function($http) {
   }
 });
 
+app.factory('profileFactory', function ($http) {
+
+  // GET req; 
+  var getProfileInfo = function() {
+    //Actual function. Hard coding returned user data for testing purposes
+    // return $http.get('/me')
+    //   .then(function(res) {
+    //     return res.data;
+    //   })
+    //   .catch(function(err) {
+    //     console.log(err);
+    //   });
+    //Hard coded user data
+    return {
+      firstName: 'Laura', 
+      lastName: 'Weaver', 
+      age: 25, 
+      location: 'San Francisco, CA',
+      photo: '../photos/testProfilePhoto.jpg',
+      username: 'lauraweaver', 
+      donations: [
+        {name: 'AIDS', amount: 100, image: '../photos/no-photo.png'}, 
+        {name: 'Cancer', amount: 100, image: '../photos/no-photo.png'}, 
+        {name: 'Heart transplant', amount: 100, image: '../photos/no-photo.png'}, 
+        {name: 'Malaria', amount: 100, image: '../photos/no-photo.png'}, 
+        {name: 'Famine', amount: 100, image: '../photos/no-photo.png'}
+      ]
+    }
+  };
+
+  return {
+    getProfileInfo: getProfileInfo
+  }
+
+});
 
 // this factory will hold all VERB requests relating to patients
 app.factory('patientsFactory', function ($http) {
