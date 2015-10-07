@@ -1,5 +1,6 @@
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var stripe = require("stripe")("pk_test_ryKUfWb7sBDEmXyCjfDHfUgy");
 
 module.exports = function (app, express) {
 
